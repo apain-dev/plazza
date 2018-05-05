@@ -7,12 +7,14 @@
 
 #include <iostream>
 #include "plazza_manager.hpp"
+#include "parser.hpp"
 
 int main(int ac, char **av)
 {
-	if (ac == 2) {
+	auto parser = new Parser();
+	if (ac == 3) {
 		auto plazzaManager = new PlazzaManager(std::atoi(av[1]));
-		plazzaManager->readUserInput();
+		parser->cmdParser(av[2], plazzaManager);
 	} else {
 		std::cout << "./plazza nbSlave" << std::endl
 			<< "nbSlave (int): number of slave" << std::endl;

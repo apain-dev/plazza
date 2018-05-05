@@ -11,6 +11,7 @@
 
 #include <vector>
 #include <string>
+#include "commands_enum.hpp"
 
 class SlaveManager;
 
@@ -24,7 +25,7 @@ class PlazzaManager {
 
 	int getNbFreeSlave();
 
-	bool runCmd(const std::string &cmd);
+	bool runCmd(const std::string &cmd, Information info);
 
 	SlaveManager *findFreeSlaveManager();
 

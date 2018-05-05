@@ -12,8 +12,9 @@ TEAL		=	"\033[1;36m"
 RED		=	"\033[0;31m"
 
 SRCS		=	src/plazza_manager.cpp  \
+                src/parser.cpp          \
                 src/slave_manager.cpp   \
-                src/slave.cpp   \
+                src/slave.cpp           \
                 src/main.cpp
 
 OBJS		=	$(SRCS:.cpp=.o)
