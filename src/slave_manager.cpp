@@ -5,7 +5,6 @@
 ** started at 5/5/18
 */
 
-#include <iostream>
 #include "plazza_manager.hpp"
 #include "slave_manager.hpp"
 #include "slave.hpp"
@@ -25,6 +24,9 @@ SlaveManager::SlaveManager(int nbSlaves) : _nbSlaves(nbSlaves)
 	_disponibility = _nbSlaves;
 	std::cout << "[DEBUG] " << _nbSlaves << " slaves created: "
 		<< _disponibility << " dispo " << std::endl;
+	std::thread t(&SlaveManager::initSocket, this);
+	t.detach();
+	_server = t.get_id();
 }
 
 /**
@@ -35,11 +37,13 @@ SlaveManager::SlaveManager(int nbSlaves) : _nbSlaves(nbSlaves)
 
 bool SlaveManager::sendCmd(const std::string &cmd)
 {
+	std::string delimiter = ";";
 	Slave *freeSlave = findFreeSlave();
 
 	if (!freeSlave)
 		return (false);
 	freeSlave->applyCmd(cmd);
+
 	return (true);
 }
 
@@ -112,3 +116,32 @@ void SlaveManager::setNbSlaves(int nbSlaves)
 	_nbSlaves = nbSlaves;
 }
 
+void SlaveManager::initSocket()
+{
+	struct sockaddr_in in;
+	struct sockaddr_in in_client;
+	int sock;
+	int sock_client;
+	int c;
+
+	sock = socket(AF_INET, SOCK_STREAM, 0);
+	if (sock == -1) {
+		perror("socket");
+		return;
+	}
+	in.sin_family = AF_INET;
+	in.sin_addr.s_addr = INADDR_ANY;
+	in.sin_port = htons(8888);
+	if (bind(sock, (struct sockaddr *)&in, sizeof(in)) < 0) {
+		perror("bind");
+		return;
+	}
+	listen(sock, this->_nbSlaves);
+	c = sizeof(struct sockaddr_in);
+	while (42) {
+		sock_client = accept(sock, (struct sockaddr *)&in_client,
+			(socklen_t *)&c);
+		if (sock_client < 0)
+			return;
+	}
+}
