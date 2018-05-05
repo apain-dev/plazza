@@ -27,10 +27,10 @@ class Slave {
 
 	void updateDisponibility(bool disponibility);
 
-	bool applyCmd(const std::string &cmd);
+	bool applyCmd(const std::string &cmd, Information info);
 
 	int connectSocket();
-	void launchThread(const std::string &cmd);
+	void launchThread(const std::string &cmd, Information info);
 
 	private:
 	bool _disponibility;

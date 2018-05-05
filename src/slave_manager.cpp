@@ -32,17 +32,18 @@ SlaveManager::SlaveManager(int nbSlaves) : _nbSlaves(nbSlaves)
 /**
   *  @brief  try to run cmd by finding a free slave
   *  @param cmd  string contening cmd
+  *  @param info Enum type de recherche
   *  @return  bool success or not
   */
 
-bool SlaveManager::sendCmd(const std::string &cmd)
+bool SlaveManager::sendCmd(const std::string &cmd, Information info)
 {
 	std::string delimiter = ";";
 	Slave *freeSlave = findFreeSlave();
 
 	if (!freeSlave)
 		return (false);
-	freeSlave->applyCmd(cmd);
+	freeSlave->applyCmd(cmd, info);
 
 	return (true);
 }
