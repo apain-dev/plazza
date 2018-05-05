@@ -1,31 +1,32 @@
-//
-// Created by arthur on 5/4/18.
-//
+/*
+** EPITECH PROJECT, 2018
+** plazza
+** File description:
+** started at 5/5/18
+*/
 
 #ifndef UNTITLED_SLAVE_HPP
 #define UNTITLED_SLAVE_HPP
 
+class SlaveManager;
+
 #include <string>
-#include "slave_manager.hpp"
 
 class Slave {
 	public:
 	Slave();
 
-	bool get_disponibility() const;
+	bool getDisponibility() const;
 
-	void set_disponibility(bool _disponibility);
+	void setDisponibility(bool _disponibility);
 
-	SlaveManager *get_slaveManager() const;
+	SlaveManager *getSlaveManager() const;
 
-	void set_slaveManager(SlaveManager *_slaveManager);
+	void setSlaveManager(SlaveManager *slaveManager);
 
-	void update_disponibility(bool);
+	void updateDisponibility(bool disponibility);
 
-	bool apply_cmd(const std::string &);
-
-
-
+	bool applyCmd(const std::string &cmd);
 
 	private:
 	bool _disponibility;

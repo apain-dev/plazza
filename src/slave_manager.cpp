@@ -1,50 +1,114 @@
-//
-// Created by arthur on 5/4/18.
-//
+/*
+** EPITECH PROJECT, 2018
+** plazza
+** File description:
+** started at 5/5/18
+*/
 
+#include <iostream>
+#include "plazza_manager.hpp"
 #include "slave_manager.hpp"
+#include "slave.hpp"
 
-SlaveManager::SlaveManager(int _nbSlaves) : _nbSlaves(_nbSlaves),
-	_disponibility(0)
+/**
+  *  @brief  Constructor of SlaveManager
+  *  @param nbSlaves int number of slave
+  */
+
+SlaveManager::SlaveManager(int nbSlaves) : _nbSlaves(nbSlaves)
 {
+	for (int i = 0; i < _nbSlaves; i++) {
+		auto newSlave = new Slave();
+		newSlave->setSlaveManager(this);
+		_slaves.emplace(_slaves.begin(), newSlave);
+	}
+	_disponibility = _nbSlaves;
+	std::cout << "[DEBUG] " << _nbSlaves << " slaves created: "
+		<< _disponibility << " dispo " << std::endl;
 }
 
-const std::vector<Slave> &SlaveManager::get_slaves() const
+/**
+  *  @brief  try to run cmd by finding a free slave
+  *  @param cmd  string contening cmd
+  *  @return  bool success or not
+  */
+
+bool SlaveManager::sendCmd(const std::string &cmd)
+{
+	Slave *freeSlave = findFreeSlave();
+
+	if (!freeSlave)
+		return (false);
+	freeSlave->applyCmd(cmd);
+	return (true);
+}
+
+/**
+  *  @brief  try to find a free slave
+  *  @return  Slave* | nullptr free slave
+  */
+
+Slave *SlaveManager::findFreeSlave()
+{
+	for (auto &_slave : _slaves) {
+		if (_slave->getDisponibility())
+			return _slave;
+	}
+	std::cout << "cannot find" << std::endl;
+	return nullptr;
+}
+
+/*
+ * Getter & setter
+ */
+
+void SlaveManager::increaseDisponibility()
+{
+	_disponibility++;
+}
+
+void SlaveManager::decreaseDisponibility()
+{
+	_disponibility--;
+}
+
+const std::vector<Slave *> &SlaveManager::getSlaves() const
 {
 	return _slaves;
 }
 
-void SlaveManager::set_slaves(const std::vector<Slave> &_slaves)
+void SlaveManager::setSlaves(const std::vector<Slave *> &slaves)
 {
-	SlaveManager::_slaves = _slaves;
+	_slaves = slaves;
 }
 
-PlazzaManager *SlaveManager::get_plazzaManager() const
+PlazzaManager *SlaveManager::getPlazzaManager() const
 {
 	return _plazzaManager;
 }
 
-void SlaveManager::set_plazzaManager(PlazzaManager *_plazzaManager)
+void SlaveManager::setPlazzaManager(PlazzaManager *plazzaManager)
 {
-	SlaveManager::_plazzaManager = _plazzaManager;
+	_plazzaManager = plazzaManager;
 }
 
-int SlaveManager::get_disponibility() const
+int SlaveManager::getDisponibility() const
 {
 	return _disponibility;
 }
 
-void SlaveManager::set_disponibility(int _disponibility)
+void SlaveManager::setDisponibility(int disponibility)
 {
-	SlaveManager::_disponibility = _disponibility;
+	_disponibility = disponibility;
 }
 
-int SlaveManager::get_nbSlaves() const
+int SlaveManager::getNbSlaves() const
 {
 	return _nbSlaves;
 }
 
-void SlaveManager::set_nbSlaves(int _nbSlaves)
+void SlaveManager::setNbSlaves(int nbSlaves)
 {
-	SlaveManager::_nbSlaves = _nbSlaves;
+	_nbSlaves = nbSlaves;
 }
+
