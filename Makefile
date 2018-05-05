@@ -20,14 +20,16 @@ OBJS		=	$(SRCS:.cpp=.o)
 
 NAME		=	plazza
 
-CPPFLAGS	+= 	-std=c++11 -W -Wall -Wextra -Iinc/
+LDFLAGS    =   -lpthread
+
+CPPFLAGS	+=  -std=c++11 -W -Wall -Wextra -Iinc/
 
 CC		=	g++
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-		$(CC) $(OBJS) -o $(NAME)
+		$(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
 
 clean:
 		$(RM) $(OBJS)

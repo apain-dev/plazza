@@ -6,8 +6,13 @@
 */
 
 #include <iostream>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <arpa/inet.h>
+#include <zconf.h>
 #include "slave_manager.hpp"
 #include "slave.hpp"
+
 
 /**
   *  @brief  Constructor of Slave
@@ -45,7 +50,9 @@ bool Slave::applyCmd(const std::string &cmd)
 
 	std::cout << cmd << " is working" << std::endl;
 	// TODO Launch real action
-
+	std::thread t(&Slave::launchThread, this, cmd);
+	t.detach();
+	_thread = t.get_id();
 	return ret;
 }
 
@@ -73,4 +80,35 @@ SlaveManager *Slave::getSlaveManager() const
 void Slave::setSlaveManager(SlaveManager *slaveManager)
 {
 	_slaveManager = slaveManager;
+}
+
+int Slave::connectSocket()
+{
+	struct sockaddr_in sock_addr;
+	struct protoent *proto_ent;
+	int sock;
+
+	proto_ent = getprotobyname("TCP");
+	if (NULL == proto_ent)
+		return (1);
+	sock = socket(AF_INET, SOCK_STREAM,
+		proto_ent->p_proto);
+	if (-1 == sock)
+		return (1);
+	sock_addr.sin_family = AF_INET;
+	sock_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+	sock_addr.sin_port = htons((unsigned short int)8888);
+	if (1 == connect(sock,
+		(struct sockaddr *)&sock_addr,
+		sizeof(sock_addr)))
+		return (1);
+	fprintf(stderr, "Slave threading ok\n");
+}
+
+void Slave::launchThread(const std::string &cmd)
+{
+	if (1 == connectSocket())
+		return;
+	sleep(20);
+	updateDisponibility(true);
 }
