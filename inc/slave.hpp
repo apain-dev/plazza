@@ -31,13 +31,19 @@ class Slave {
 	bool applyCmd(const std::string &cmd, Information info);
 
 	int connectSocket();
+
 	void launchThread(const std::string &cmd, Information info);
+
+	void sendThreadId();
+
+	void sendData(std::string const &s);
 
 	private:
 	bool _disponibility;
 	SlaveManager *_slaveManager;
 	std::thread::id _thread;
 	Operation *_op;
+	int _sock;
 };
 
 #endif //UNTITLED_SLAVE_HPP

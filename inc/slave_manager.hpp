@@ -11,6 +11,7 @@
 #include <vector>
 #include <string>
 #include <thread>
+#include <unistd.h>
 #include <iostream>
 #include <map>
 #include <netinet/in.h>
@@ -26,7 +27,6 @@ class SlaveManager {
 	PlazzaManager *_plazzaManager;
 	int _disponibility;
 	int _nbSlaves;
-	std::thread::id _server;
 
 	public:
 	explicit SlaveManager(int _nbSlaves);
@@ -54,8 +54,6 @@ class SlaveManager {
 	bool sendCmd(const std::string &cmd, Information info);
 
 	Slave *findFreeSlave();
-
-	void initSocket();
 };
 
 #endif //UNTITLED_SLAVE_MANAGER_HPP
