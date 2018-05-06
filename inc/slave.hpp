@@ -12,6 +12,7 @@ class SlaveManager;
 
 #include <string>
 #include <thread>
+#include "operation.hpp"
 
 class Slave {
 	public:
@@ -36,6 +37,7 @@ class Slave {
 	bool _disponibility;
 	SlaveManager *_slaveManager;
 	std::thread::id _thread;
+	Operation *_op;
 };
 
 #endif //UNTITLED_SLAVE_HPP

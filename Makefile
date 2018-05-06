@@ -15,6 +15,7 @@ SRCS		=	src/plazza_manager.cpp  \
                 src/parser.cpp          \
                 src/slave_manager.cpp   \
                 src/slave.cpp           \
+                src/operation.cpp       \
                 src/main.cpp
 
 OBJS		=	$(SRCS:.cpp=.o)
