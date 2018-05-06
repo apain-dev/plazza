@@ -19,6 +19,7 @@
 
 Slave::Slave() : _disponibility(true), _op(new Operation())
 {
+	_sock = -1;
 }
 
 /**
@@ -50,7 +51,6 @@ bool Slave::applyCmd(const std::string &cmd, Information info)
 
 	std::thread t(&Slave::launchThread, this, cmd, info);
 	t.detach();
-	_thread = t.get_id();
 	return ret;
 }
 
@@ -88,28 +88,62 @@ int Slave::connectSocket()
 
 	proto_ent = getprotobyname("TCP");
 	if (NULL == proto_ent)
-		return (1);
+		return (-1);
 	sock = socket(AF_INET, SOCK_STREAM,
 		proto_ent->p_proto);
 	if (-1 == sock)
-		return (1);
+		return (-1);
 	sock_addr.sin_family = AF_INET;
 	sock_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 	sock_addr.sin_port = htons((unsigned short int)8888);
 	if (1 == connect(sock,
 		(struct sockaddr *)&sock_addr,
 		sizeof(sock_addr)))
-		return (1);
-	fprintf(stderr, "Slave threading ok\n");
+		return (-1);
+	return (sock);
+}
+
+void Slave::sendThreadId()
+{
+	std::stringstream ss;
+	std::string s;
+
+	ss << _thread << std::endl;
+	s = ss.str();
+	write(_sock, s.c_str(), s.size());
+}
+
+void Slave::sendData(std::string const &s)
+{
+	usleep(10);
+	write(_sock, s.c_str(), s.size());
 }
 
 void Slave::launchThread(const std::string &cmd, Information info)
 {
-	if (_op->openFile(cmd))
-		std::cerr << "Cannot open file" << std::endl;
-	if (_op->executeCommand(info))
-		std::cerr << "Cannot find info" << std::endl;
-	if (1 == connectSocket())
+	_sock = connectSocket();
+	_thread = std::this_thread::get_id();
+	if (-1 == _sock) {
+		std::cerr << "Unable to connect to manager" << std::endl;
 		return;
+	}
+	sendThreadId();
+	if (_op->openFile(cmd)) {
+		std::cerr << "Cannot open file" << std::endl;
+		updateDisponibility(true);
+		close(_sock);
+		_sock = -1;
+		return;
+	}
+	if (_op->executeCommand(info, _sock)) {
+		std::cerr << "Cannot find info" << std::endl;
+		updateDisponibility(true);
+		close(_sock);
+		_sock = -1;
+		return;
+	}
+	sendData("END");
 	updateDisponibility(true);
+	close(_sock);
+	_sock = -1;
 }

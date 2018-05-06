@@ -14,6 +14,7 @@
 #include "commands_enum.hpp"
 
 class SlaveManager;
+class Result;
 
 class PlazzaManager {
 	public:
@@ -31,10 +32,17 @@ class PlazzaManager {
 
 	SlaveManager *createSlaveManager();
 
+	void initSocket();
+	void listenClient();
+
+	void readResult();
+
 	private:
 	std::vector<SlaveManager *> _slaveManagers;
+	std::vector<Result *> _results;
 	std::string _cmd;
 	int _nbSlaves;
+	int _sock;
 };
 
 #endif //UNTITLED_PLAZZA_MANAGER_HPP
