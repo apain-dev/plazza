@@ -43,10 +43,10 @@ RM = /home/arthur/software/Clion/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arthur/CLionProjects/untitled
+CMAKE_SOURCE_DIR = /home/arthur/CLionProjects/plazza
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arthur/CLionProjects/untitled/cmake-build-debug
+CMAKE_BINARY_DIR = /home/arthur/CLionProjects/plazza/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/untitled.dir/depend.make
@@ -57,42 +57,18 @@ include CMakeFiles/untitled.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/untitled.dir/flags.make
 
-CMakeFiles/untitled.dir/main.cpp.o: CMakeFiles/untitled.dir/flags.make
-CMakeFiles/untitled.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arthur/CLionProjects/untitled/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/main.cpp.o -c /home/arthur/CLionProjects/untitled/main.cpp
-
-CMakeFiles/untitled.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arthur/CLionProjects/untitled/main.cpp > CMakeFiles/untitled.dir/main.cpp.i
-
-CMakeFiles/untitled.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arthur/CLionProjects/untitled/main.cpp -o CMakeFiles/untitled.dir/main.cpp.s
-
-CMakeFiles/untitled.dir/main.cpp.o.requires:
-
-.PHONY : CMakeFiles/untitled.dir/main.cpp.o.requires
-
-CMakeFiles/untitled.dir/main.cpp.o.provides: CMakeFiles/untitled.dir/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/main.cpp.o.provides.build
-.PHONY : CMakeFiles/untitled.dir/main.cpp.o.provides
-
-CMakeFiles/untitled.dir/main.cpp.o.provides.build: CMakeFiles/untitled.dir/main.cpp.o
-
-
 CMakeFiles/untitled.dir/src/slave.cpp.o: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/src/slave.cpp.o: ../src/slave.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arthur/CLionProjects/untitled/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled.dir/src/slave.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/src/slave.cpp.o -c /home/arthur/CLionProjects/untitled/src/slave.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arthur/CLionProjects/plazza/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled.dir/src/slave.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/src/slave.cpp.o -c /home/arthur/CLionProjects/plazza/src/slave.cpp
 
 CMakeFiles/untitled.dir/src/slave.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/src/slave.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arthur/CLionProjects/untitled/src/slave.cpp > CMakeFiles/untitled.dir/src/slave.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arthur/CLionProjects/plazza/src/slave.cpp > CMakeFiles/untitled.dir/src/slave.cpp.i
 
 CMakeFiles/untitled.dir/src/slave.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/src/slave.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arthur/CLionProjects/untitled/src/slave.cpp -o CMakeFiles/untitled.dir/src/slave.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arthur/CLionProjects/plazza/src/slave.cpp -o CMakeFiles/untitled.dir/src/slave.cpp.s
 
 CMakeFiles/untitled.dir/src/slave.cpp.o.requires:
 
@@ -107,16 +83,16 @@ CMakeFiles/untitled.dir/src/slave.cpp.o.provides.build: CMakeFiles/untitled.dir/
 
 CMakeFiles/untitled.dir/src/slave_manager.cpp.o: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/src/slave_manager.cpp.o: ../src/slave_manager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arthur/CLionProjects/untitled/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/untitled.dir/src/slave_manager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/src/slave_manager.cpp.o -c /home/arthur/CLionProjects/untitled/src/slave_manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arthur/CLionProjects/plazza/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled.dir/src/slave_manager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/src/slave_manager.cpp.o -c /home/arthur/CLionProjects/plazza/src/slave_manager.cpp
 
 CMakeFiles/untitled.dir/src/slave_manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/src/slave_manager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arthur/CLionProjects/untitled/src/slave_manager.cpp > CMakeFiles/untitled.dir/src/slave_manager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arthur/CLionProjects/plazza/src/slave_manager.cpp > CMakeFiles/untitled.dir/src/slave_manager.cpp.i
 
 CMakeFiles/untitled.dir/src/slave_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/src/slave_manager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arthur/CLionProjects/untitled/src/slave_manager.cpp -o CMakeFiles/untitled.dir/src/slave_manager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arthur/CLionProjects/plazza/src/slave_manager.cpp -o CMakeFiles/untitled.dir/src/slave_manager.cpp.s
 
 CMakeFiles/untitled.dir/src/slave_manager.cpp.o.requires:
 
@@ -131,16 +107,16 @@ CMakeFiles/untitled.dir/src/slave_manager.cpp.o.provides.build: CMakeFiles/untit
 
 CMakeFiles/untitled.dir/src/plazza_manager.cpp.o: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/src/plazza_manager.cpp.o: ../src/plazza_manager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arthur/CLionProjects/untitled/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/untitled.dir/src/plazza_manager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/src/plazza_manager.cpp.o -c /home/arthur/CLionProjects/untitled/src/plazza_manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arthur/CLionProjects/plazza/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/untitled.dir/src/plazza_manager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/src/plazza_manager.cpp.o -c /home/arthur/CLionProjects/plazza/src/plazza_manager.cpp
 
 CMakeFiles/untitled.dir/src/plazza_manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/src/plazza_manager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arthur/CLionProjects/untitled/src/plazza_manager.cpp > CMakeFiles/untitled.dir/src/plazza_manager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arthur/CLionProjects/plazza/src/plazza_manager.cpp > CMakeFiles/untitled.dir/src/plazza_manager.cpp.i
 
 CMakeFiles/untitled.dir/src/plazza_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/src/plazza_manager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arthur/CLionProjects/untitled/src/plazza_manager.cpp -o CMakeFiles/untitled.dir/src/plazza_manager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arthur/CLionProjects/plazza/src/plazza_manager.cpp -o CMakeFiles/untitled.dir/src/plazza_manager.cpp.s
 
 CMakeFiles/untitled.dir/src/plazza_manager.cpp.o.requires:
 
@@ -153,23 +129,73 @@ CMakeFiles/untitled.dir/src/plazza_manager.cpp.o.provides: CMakeFiles/untitled.d
 CMakeFiles/untitled.dir/src/plazza_manager.cpp.o.provides.build: CMakeFiles/untitled.dir/src/plazza_manager.cpp.o
 
 
+CMakeFiles/untitled.dir/src/main.cpp.o: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arthur/CLionProjects/plazza/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/untitled.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/src/main.cpp.o -c /home/arthur/CLionProjects/plazza/src/main.cpp
+
+CMakeFiles/untitled.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arthur/CLionProjects/plazza/src/main.cpp > CMakeFiles/untitled.dir/src/main.cpp.i
+
+CMakeFiles/untitled.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arthur/CLionProjects/plazza/src/main.cpp -o CMakeFiles/untitled.dir/src/main.cpp.s
+
+CMakeFiles/untitled.dir/src/main.cpp.o.requires:
+
+.PHONY : CMakeFiles/untitled.dir/src/main.cpp.o.requires
+
+CMakeFiles/untitled.dir/src/main.cpp.o.provides: CMakeFiles/untitled.dir/src/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/src/main.cpp.o.provides.build
+.PHONY : CMakeFiles/untitled.dir/src/main.cpp.o.provides
+
+CMakeFiles/untitled.dir/src/main.cpp.o.provides.build: CMakeFiles/untitled.dir/src/main.cpp.o
+
+
+CMakeFiles/untitled.dir/src/parser.cpp.o: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/src/parser.cpp.o: ../src/parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arthur/CLionProjects/plazza/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/untitled.dir/src/parser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled.dir/src/parser.cpp.o -c /home/arthur/CLionProjects/plazza/src/parser.cpp
+
+CMakeFiles/untitled.dir/src/parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/src/parser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arthur/CLionProjects/plazza/src/parser.cpp > CMakeFiles/untitled.dir/src/parser.cpp.i
+
+CMakeFiles/untitled.dir/src/parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/src/parser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arthur/CLionProjects/plazza/src/parser.cpp -o CMakeFiles/untitled.dir/src/parser.cpp.s
+
+CMakeFiles/untitled.dir/src/parser.cpp.o.requires:
+
+.PHONY : CMakeFiles/untitled.dir/src/parser.cpp.o.requires
+
+CMakeFiles/untitled.dir/src/parser.cpp.o.provides: CMakeFiles/untitled.dir/src/parser.cpp.o.requires
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/src/parser.cpp.o.provides.build
+.PHONY : CMakeFiles/untitled.dir/src/parser.cpp.o.provides
+
+CMakeFiles/untitled.dir/src/parser.cpp.o.provides.build: CMakeFiles/untitled.dir/src/parser.cpp.o
+
+
 # Object files for target untitled
 untitled_OBJECTS = \
-"CMakeFiles/untitled.dir/main.cpp.o" \
 "CMakeFiles/untitled.dir/src/slave.cpp.o" \
 "CMakeFiles/untitled.dir/src/slave_manager.cpp.o" \
-"CMakeFiles/untitled.dir/src/plazza_manager.cpp.o"
+"CMakeFiles/untitled.dir/src/plazza_manager.cpp.o" \
+"CMakeFiles/untitled.dir/src/main.cpp.o" \
+"CMakeFiles/untitled.dir/src/parser.cpp.o"
 
 # External object files for target untitled
 untitled_EXTERNAL_OBJECTS =
 
-untitled: CMakeFiles/untitled.dir/main.cpp.o
 untitled: CMakeFiles/untitled.dir/src/slave.cpp.o
 untitled: CMakeFiles/untitled.dir/src/slave_manager.cpp.o
 untitled: CMakeFiles/untitled.dir/src/plazza_manager.cpp.o
+untitled: CMakeFiles/untitled.dir/src/main.cpp.o
+untitled: CMakeFiles/untitled.dir/src/parser.cpp.o
 untitled: CMakeFiles/untitled.dir/build.make
 untitled: CMakeFiles/untitled.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arthur/CLionProjects/untitled/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable untitled"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arthur/CLionProjects/plazza/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable untitled"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -177,10 +203,11 @@ CMakeFiles/untitled.dir/build: untitled
 
 .PHONY : CMakeFiles/untitled.dir/build
 
-CMakeFiles/untitled.dir/requires: CMakeFiles/untitled.dir/main.cpp.o.requires
 CMakeFiles/untitled.dir/requires: CMakeFiles/untitled.dir/src/slave.cpp.o.requires
 CMakeFiles/untitled.dir/requires: CMakeFiles/untitled.dir/src/slave_manager.cpp.o.requires
 CMakeFiles/untitled.dir/requires: CMakeFiles/untitled.dir/src/plazza_manager.cpp.o.requires
+CMakeFiles/untitled.dir/requires: CMakeFiles/untitled.dir/src/main.cpp.o.requires
+CMakeFiles/untitled.dir/requires: CMakeFiles/untitled.dir/src/parser.cpp.o.requires
 
 .PHONY : CMakeFiles/untitled.dir/requires
 
@@ -189,6 +216,6 @@ CMakeFiles/untitled.dir/clean:
 .PHONY : CMakeFiles/untitled.dir/clean
 
 CMakeFiles/untitled.dir/depend:
-	cd /home/arthur/CLionProjects/untitled/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arthur/CLionProjects/untitled /home/arthur/CLionProjects/untitled /home/arthur/CLionProjects/untitled/cmake-build-debug /home/arthur/CLionProjects/untitled/cmake-build-debug /home/arthur/CLionProjects/untitled/cmake-build-debug/CMakeFiles/untitled.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/arthur/CLionProjects/plazza/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/arthur/CLionProjects/plazza /home/arthur/CLionProjects/plazza /home/arthur/CLionProjects/plazza/cmake-build-debug /home/arthur/CLionProjects/plazza/cmake-build-debug /home/arthur/CLionProjects/plazza/cmake-build-debug/CMakeFiles/untitled.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/untitled.dir/depend
 

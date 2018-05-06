@@ -6,11 +6,10 @@
 */
 #ifndef UNTITLED_PARSER_HPP
 #define UNTITLED_PARSER_HPP
-
+class PlazzaManager;
 #include <vector>
 #include <string>
 #include <commands_enum.hpp>
-#include <plazza_manager.hpp>
 
 class Parser {
 	public:

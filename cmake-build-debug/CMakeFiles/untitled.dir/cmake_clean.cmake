@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/untitled.dir/main.cpp.o"
   "CMakeFiles/untitled.dir/src/slave.cpp.o"
   "CMakeFiles/untitled.dir/src/slave_manager.cpp.o"
   "CMakeFiles/untitled.dir/src/plazza_manager.cpp.o"
+  "CMakeFiles/untitled.dir/src/main.cpp.o"
+  "CMakeFiles/untitled.dir/src/parser.cpp.o"
   "untitled.pdb"
   "untitled"
 )

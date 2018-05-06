@@ -8,43 +8,43 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/arthur/CLionProjects/untitled/cmake-build-debug"/>
+				<Option working_dir="/home/arthur/CLionProjects/plazza/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/arthur/CLionProjects/untitled/cmake-build-debug"/>
+				<Option working_dir="/home/arthur/CLionProjects/plazza/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/arthur/CLionProjects/untitled/cmake-build-debug"/>
+				<Option working_dir="/home/arthur/CLionProjects/plazza/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="untitled">
-				<Option output="/home/arthur/CLionProjects/untitled/cmake-build-debug/untitled" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/arthur/CLionProjects/untitled/cmake-build-debug"/>
+				<Option output="/home/arthur/CLionProjects/plazza/cmake-build-debug/untitled" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arthur/CLionProjects/plazza/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/arthur/CLionProjects/untitled/inc"/>
+					<Add directory="/home/arthur/CLionProjects/plazza/inc"/>
 					<Add directory="/usr/include/c++/4.9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/4.9"/>
 					<Add directory="/usr/include/c++/4.9/backward"/>
@@ -55,20 +55,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="untitled/fast">
-				<Option output="/home/arthur/CLionProjects/untitled/cmake-build-debug/untitled" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/arthur/CLionProjects/untitled/cmake-build-debug"/>
+				<Option output="/home/arthur/CLionProjects/plazza/cmake-build-debug/untitled" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arthur/CLionProjects/plazza/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/arthur/CLionProjects/untitled/inc"/>
+					<Add directory="/home/arthur/CLionProjects/plazza/inc"/>
 					<Add directory="/usr/include/c++/4.9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/4.9"/>
 					<Add directory="/usr/include/c++/4.9/backward"/>
@@ -79,35 +79,41 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/untitled/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arthur/CLionProjects/plazza/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/arthur/CLionProjects/untitled/inc/plazza_manager.hpp">
+		<Unit filename="/home/arthur/CLionProjects/plazza/inc/parser.hpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/home/arthur/CLionProjects/untitled/inc/slave.hpp">
+		<Unit filename="/home/arthur/CLionProjects/plazza/inc/plazza_manager.hpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/home/arthur/CLionProjects/untitled/inc/slave_manager.hpp">
+		<Unit filename="/home/arthur/CLionProjects/plazza/inc/slave.hpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/home/arthur/CLionProjects/untitled/main.cpp">
+		<Unit filename="/home/arthur/CLionProjects/plazza/inc/slave_manager.hpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/home/arthur/CLionProjects/untitled/src/plazza_manager.cpp">
+		<Unit filename="/home/arthur/CLionProjects/plazza/src/main.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/home/arthur/CLionProjects/untitled/src/slave.cpp">
+		<Unit filename="/home/arthur/CLionProjects/plazza/src/parser.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/home/arthur/CLionProjects/untitled/src/slave_manager.cpp">
+		<Unit filename="/home/arthur/CLionProjects/plazza/src/plazza_manager.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/home/arthur/CLionProjects/untitled/CMakeLists.txt">
+		<Unit filename="/home/arthur/CLionProjects/plazza/src/slave.cpp">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/home/arthur/CLionProjects/plazza/src/slave_manager.cpp">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/home/arthur/CLionProjects/plazza/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -36,6 +36,7 @@ bool Operation::executeCommand(enum Information information, int sock)
 		findPhoneNumber(sock);
 		break;
 	case EMAIL_ADDRESS:
+		findEmailAdress(sock);
 		break;
 	case IP_ADDRESS:
 		findIPAdress(sock);
@@ -65,6 +66,7 @@ int Operation::findPhoneNumber(int sock)
 			line = m.suffix();
 		}
 	}
+	return 0;
 }
 
 int Operation::findIPAdress(int sock)
@@ -85,4 +87,24 @@ int Operation::findIPAdress(int sock)
 			line = m.suffix();
 		}
 	}
+	return 0;
+}
+
+int Operation::findEmailAdress(int sock)
+{
+	std::string line;
+	std::regex email_regex(
+		"([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9_-]+)");
+	std::smatch email_match;
+	std::string s;
+	while (getline(_fileStream, line)) {
+		while (std::regex_search(line, email_match, email_regex)) {
+			std::stringstream ss;
+			ss << email_match[0];
+			s = ss.str();
+			write(sock, s.c_str(), s.size());
+			line = email_match.suffix();
+		}
+	}
+	return 0;
 }

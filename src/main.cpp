@@ -11,10 +11,8 @@
 
 int main(int ac, char **av)
 {
-	auto parser = new Parser();
-	if (ac == 3) {
+	if (ac == 2) {
 		auto plazzaManager = new PlazzaManager(std::atoi(av[1]));
-		parser->cmdParser(av[2], plazzaManager);
 		plazzaManager->readUserInput();
 	} else {
 		std::cout << "./plazza nbSlave" << std::endl

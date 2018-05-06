@@ -6,7 +6,10 @@
 */
 
 #include <iostream>
+
 #include "plazza_manager.hpp"
+#include "parser.hpp"
+
 #include "slave_manager.hpp"
 #include "result.hpp"
 #include "slave.hpp"
@@ -18,6 +21,7 @@
 
 PlazzaManager::PlazzaManager(int nbSlaves) : _nbSlaves(nbSlaves)
 {
+	_parser = new Parser();
 	_slaveManagers.emplace(_slaveManagers.begin(), createSlaveManager());
 	std::thread t(&PlazzaManager::initSocket, this);
 	t.detach();
@@ -91,24 +95,21 @@ int PlazzaManager::getNbNotFreeSlave()
 void PlazzaManager::readUserInput()
 {
 	std::string cmd;
-	bool running = true;
-
-	while (running) {
-		std::cout << "> ";
-		std::getline(std::cin, cmd);
+	std::cout << ">";
+	while (std::getline(std::cin, cmd)) {
 		if (cmd.find("nbNotFreeSlave") != std::string::npos) {
 			std::cout << "Slave who processed: "
 				<< getNbNotFreeSlave() << std::endl;
 		} else if (cmd.find("fuckOff") != std::string::npos) {
 			std::cout << "ByeBye" << std::endl;
-			running = false;
 		} else if (cmd.find("nbFreeSlave") != std::string::npos) {
 			std::cout << "Slaves who are jerking themself: "
 				<< getNbFreeSlave() << std::endl;
 		} else {
-			runCmd(cmd, UNDEFINED);
+			_parser->cmdParser(cmd, this);
 		}
 		cmd.clear();
+		std::cout << std::endl << "> ";
 	}
 }
 

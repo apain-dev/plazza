@@ -26,7 +26,9 @@ class Operation
 	int closeFile();
 	bool executeCommand(enum Information information, int sock);
 	int findPhoneNumber(int sock);
+	int findEmailAdress(int sock);
 	int findIPAdress(int sock);
+
 };
 
 #endif /* PLAZZA_OPERATION_HPP */

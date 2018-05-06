@@ -12,7 +12,7 @@
 #include <vector>
 #include <string>
 #include "commands_enum.hpp"
-
+class Parser;
 class SlaveManager;
 class Result;
 
@@ -38,6 +38,7 @@ class PlazzaManager {
 	void readResult();
 
 	private:
+	Parser *_parser;
 	std::vector<SlaveManager *> _slaveManagers;
 	std::vector<Result *> _results;
 	std::string _cmd;

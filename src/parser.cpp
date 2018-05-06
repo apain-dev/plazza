@@ -5,6 +5,7 @@
 ** started at 5/5/18
 */
 #include <iostream>
+#include "plazza_manager.hpp"
 #include "parser.hpp"
 
 /**

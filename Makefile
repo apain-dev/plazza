@@ -39,6 +39,7 @@ clean:
 
 fclean:		clean
 		$(RM) $(NAME)
+ui:         $(NAME)
 
 re:		fclean all
 
