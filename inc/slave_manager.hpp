@@ -18,6 +18,7 @@
 class Slave;
 
 #include "plazza_manager.hpp"
+#include "commands_enum.hpp"
 
 class SlaveManager {
 	private:
@@ -50,7 +51,7 @@ class SlaveManager {
 
 	void setNbSlaves(int _nbSlaves);
 
-	bool sendCmd(const std::string &);
+	bool sendCmd(const std::string &cmd, Information info);
 
 	Slave *findFreeSlave();
 

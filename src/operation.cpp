@@ -15,13 +15,11 @@ Operation::~Operation()
 {
 }
 
-int Operation::openFile(const std::string &file)
+bool Operation::openFile(const std::string &file)
 {
 
 	_fileStream.open(file);
-	if (!_fileStream.good())
-		return 1;
-	return 0;
+	return (!_fileStream.good());
 }
 
 int Operation::closeFile()
@@ -30,7 +28,7 @@ int Operation::closeFile()
 	return 0;
 }
 
-int Operation::executeCommand(enum Information information)
+bool Operation::executeCommand(enum Information information)
 {
 	switch (information) {
 	case PHONE_NUMBER:
@@ -39,25 +37,43 @@ int Operation::executeCommand(enum Information information)
 	case EMAIL_ADDRESS:
 		break;
 	case IP_ADDRESS:
+		findIPAdress();
 		break;
 	default:
-		break;
+		return true;
 	}
+	return false;
 }
+
+
 
 int Operation::findPhoneNumber()
 {
 	std::string line;
-	std::regex phone_regex("(?:[a-z0-9_-]+(?:\\.[a-z0-9!_-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])");
+	std::regex phone_regex("[\\d\\s]{11,}");
 	std::smatch phone_match;
 	std::smatch m;
 
 	while (getline(_fileStream, line)) {
-		//std::cout << line << std::endl;
-		if (std::regex_search(line.cbegin(), line.cend() ,m, phone_regex)) {
-			for (auto x:m)
-				std::cout << x << " ";
-			std::cout << std::endl;
+		while (std::regex_search(line, m, phone_regex)) {
+			for (auto &item: m)
+				std::cerr << "Found: " << item << std::endl;
+			line = m.suffix();
+		}
+	}
+}
+
+int Operation::findIPAdress()
+{
+	std::string line;
+	std::regex ip_regex("(\\d{1,3})[.](\\d{1,3})[.](\\d{1,3})[.](\\d{1,3})");
+	std::smatch phone_match;
+	std::smatch m;
+
+	while (getline(_fileStream, line)) {
+		while (std::regex_search(line, m, ip_regex)) {
+				std::cerr << "Found: " << m[0] << std::endl;
+			line = m.suffix();
 		}
 	}
 }

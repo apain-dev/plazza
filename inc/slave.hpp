@@ -12,6 +12,7 @@ class SlaveManager;
 
 #include <string>
 #include <thread>
+#include "operation.hpp"
 
 class Slave {
 	public:
@@ -27,15 +28,16 @@ class Slave {
 
 	void updateDisponibility(bool disponibility);
 
-	bool applyCmd(const std::string &cmd);
+	bool applyCmd(const std::string &cmd, Information info);
 
 	int connectSocket();
-	void launchThread(const std::string &cmd);
+	void launchThread(const std::string &cmd, Information info);
 
 	private:
 	bool _disponibility;
 	SlaveManager *_slaveManager;
 	std::thread::id _thread;
+	Operation *_op;
 };
 
 #endif //UNTITLED_SLAVE_HPP

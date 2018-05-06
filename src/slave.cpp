@@ -9,7 +9,6 @@
 #include <netinet/in.h>
 #include <netdb.h>
 #include <arpa/inet.h>
-#include <zconf.h>
 #include "slave_manager.hpp"
 #include "slave.hpp"
 
@@ -18,7 +17,7 @@
   *  @brief  Constructor of Slave
   */
 
-Slave::Slave() : _disponibility(true)
+Slave::Slave() : _disponibility(true), _op(new Operation())
 {
 }
 
@@ -40,17 +39,16 @@ void Slave::updateDisponibility(bool disponibility)
 /**
   *  @brief  try to run cmd
   *  @param cmd  string contening cmd
+  *  @param info Enum type de recherche
   *  @return  bool success or not
   */
 
-bool Slave::applyCmd(const std::string &cmd)
+bool Slave::applyCmd(const std::string &cmd, Information info)
 {
 	bool ret = true;
 	setDisponibility(false);
 
-	std::cout << cmd << " is working" << std::endl;
-	// TODO Launch real action
-	std::thread t(&Slave::launchThread, this, cmd);
+	std::thread t(&Slave::launchThread, this, cmd, info);
 	t.detach();
 	_thread = t.get_id();
 	return ret;
@@ -105,10 +103,13 @@ int Slave::connectSocket()
 	fprintf(stderr, "Slave threading ok\n");
 }
 
-void Slave::launchThread(const std::string &cmd)
+void Slave::launchThread(const std::string &cmd, Information info)
 {
+	if (_op->openFile(cmd))
+		std::cerr << "Cannot open file" << std::endl;
+	if (_op->executeCommand(info))
+		std::cerr << "Cannot find info" << std::endl;
 	if (1 == connectSocket())
 		return;
-	sleep(20);
 	updateDisponibility(true);
 }

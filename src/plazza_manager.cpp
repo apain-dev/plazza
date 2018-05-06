@@ -103,7 +103,7 @@ void PlazzaManager::readUserInput()
 			std::cout << "Slaves who are jerking themself: "
 				<< getNbFreeSlave() << std::endl;
 		} else {
-			runCmd(cmd);
+			runCmd(cmd, UNDEFINED);
 		}
 		cmd.clear();
 	}
@@ -115,11 +115,11 @@ void PlazzaManager::readUserInput()
   *  @return  bool success or not
   */
 
-bool PlazzaManager::runCmd(const std::string &cmd)
+bool PlazzaManager::runCmd(const std::string &cmd, Information information)
 {
 	auto slave = findFreeSlaveManager();
 	if (!slave)
 		return false;
-	slave->sendCmd(cmd);
+	slave->sendCmd(cmd, information);
 	return true;
 }
