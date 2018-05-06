@@ -22,10 +22,11 @@ class Operation
 	public:
 	Operation();
 	virtual ~Operation();
-	int openFile(const std::string &file);
+	bool openFile(const std::string &file);
 	int closeFile();
-	int executeCommand(enum Information information);
+	bool executeCommand(enum Information information);
 	int findPhoneNumber();
+	int findIPAdress();
 };
 
 #endif /* PLAZZA_OPERATION_HPP */

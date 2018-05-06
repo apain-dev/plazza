@@ -17,7 +17,7 @@
   *  @brief  Constructor of Slave
   */
 
-Slave::Slave() : _disponibility(true)
+Slave::Slave() : _disponibility(true), _op(new Operation())
 {
 }
 
@@ -105,7 +105,10 @@ int Slave::connectSocket()
 
 void Slave::launchThread(const std::string &cmd, Information info)
 {
-	std::cerr << "working " << cmd << " ";
+	if (_op->openFile(cmd))
+		std::cerr << "Cannot open file" << std::endl;
+	if (_op->executeCommand(info))
+		std::cerr << "Cannot find info" << std::endl;
 	if (1 == connectSocket())
 		return;
 	updateDisponibility(true);

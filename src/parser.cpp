@@ -4,6 +4,7 @@
 ** File description:
 ** started at 5/5/18
 */
+#include <iostream>
 #include "parser.hpp"
 
 /**

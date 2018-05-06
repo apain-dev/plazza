@@ -15,6 +15,7 @@ int main(int ac, char **av)
 	if (ac == 3) {
 		auto plazzaManager = new PlazzaManager(std::atoi(av[1]));
 		parser->cmdParser(av[2], plazzaManager);
+		plazzaManager->readUserInput();
 	} else {
 		std::cout << "./plazza nbSlave" << std::endl
 			<< "nbSlave (int): number of slave" << std::endl;
