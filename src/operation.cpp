@@ -5,6 +5,7 @@
 **  operation.cpp - jibs (CLion)
 */
 
+#include <unistd.h>
 #include "operation.hpp"
 
 Operation::Operation()
@@ -28,16 +29,16 @@ int Operation::closeFile()
 	return 0;
 }
 
-bool Operation::executeCommand(enum Information information)
+bool Operation::executeCommand(enum Information information, int sock)
 {
 	switch (information) {
 	case PHONE_NUMBER:
-		findPhoneNumber();
+		findPhoneNumber(sock);
 		break;
 	case EMAIL_ADDRESS:
 		break;
 	case IP_ADDRESS:
-		findIPAdress();
+		findIPAdress(sock);
 		break;
 	default:
 		return true;
@@ -45,34 +46,42 @@ bool Operation::executeCommand(enum Information information)
 	return false;
 }
 
-
-
-int Operation::findPhoneNumber()
+int Operation::findPhoneNumber(int sock)
 {
 	std::string line;
 	std::regex phone_regex("[\\d\\s]{11,}");
 	std::smatch phone_match;
 	std::smatch m;
+	std::string s;
 
 	while (getline(_fileStream, line)) {
 		while (std::regex_search(line, m, phone_regex)) {
-			for (auto &item: m)
-				std::cerr << "Found: " << item << std::endl;
+			for (auto &item: m) {
+				std::stringstream ss;
+				ss << item;
+				s = ss.str();
+				write(sock, s.c_str(), s.size());
+			}
 			line = m.suffix();
 		}
 	}
 }
 
-int Operation::findIPAdress()
+int Operation::findIPAdress(int sock)
 {
 	std::string line;
-	std::regex ip_regex("(\\d{1,3})[.](\\d{1,3})[.](\\d{1,3})[.](\\d{1,3})");
+	std::regex ip_regex(
+		"(\\d{1,3})[.](\\d{1,3})[.](\\d{1,3})[.](\\d{1,3})");
 	std::smatch phone_match;
 	std::smatch m;
+	std::string s;
 
 	while (getline(_fileStream, line)) {
 		while (std::regex_search(line, m, ip_regex)) {
-				std::cerr << "Found: " << m[0] << std::endl;
+			std::stringstream ss;
+			ss << m[0];
+			s = ss.str();
+			write(sock, s.c_str(), s.size());
 			line = m.suffix();
 		}
 	}

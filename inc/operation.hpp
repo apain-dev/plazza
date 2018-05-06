@@ -24,9 +24,9 @@ class Operation
 	virtual ~Operation();
 	bool openFile(const std::string &file);
 	int closeFile();
-	bool executeCommand(enum Information information);
-	int findPhoneNumber();
-	int findIPAdress();
+	bool executeCommand(enum Information information, int sock);
+	int findPhoneNumber(int sock);
+	int findIPAdress(int sock);
 };
 
 #endif /* PLAZZA_OPERATION_HPP */
